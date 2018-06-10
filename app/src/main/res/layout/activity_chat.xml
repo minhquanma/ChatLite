@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/chatBackground"
+    tools:context="com.mmq.chatlite.ChatActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarMsg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/chatRoom"
+        app:layout_constraintEnd_toEndOf="@+id/chatRoom"
+        app:layout_constraintStart_toStartOf="@+id/chatRoom"
+        app:layout_constraintTop_toTopOf="@+id/chatRoom" />
+
+    <RelativeLayout
+        android:id="@+id/ChatInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/chat_input"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewEmoticon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btnImage"
+            android:background="@drawable/ic_insert_emoticon_black_24dp"
+            android:gravity="center"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/btnImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/btnSend"
+            android:layout_toEndOf="@+id/imageViewEmoticon"
+            android:background="@drawable/ic_image_black_24dp"
+            android:gravity="center"
+            android:padding="5dp" />
+
+        <com.vanniktech.emoji.EmojiEditText
+            android:id="@+id/editTextMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBaseline="@+id/btnSend"
+            android:layout_alignBottom="@+id/btnSend"
+            android:layout_toEndOf="@+id/btnImage"
+            android:layout_toStartOf="@+id/btnSend"
+            android:background="@android:color/transparent"
+            android:ems="9"
+            android:hint="Enter message..."
+            android:imeOptions="flagNoFullscreen"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/ic_send_black_24dp"
+            android:gravity="center"
+            android:padding="5dp" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chatRoom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/ChatInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+    </android.support.v7.widget.RecyclerView>
+</android.support.constraint.ConstraintLayout>

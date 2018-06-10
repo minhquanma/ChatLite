@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="left"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/avatar" />
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/itemMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left"
+        android:layout_toEndOf="@+id/imageViewAvatar"
+        android:background="@drawable/textview"
+        android:padding="9dp"
+        android:text="Hello world!"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:autoLink="web"
+        android:maxEms="12"
+       />
+
+
+    <TextView
+        android:id="@+id/sentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/itemMessage"
+        android:text="00:00 AM"
+        android:paddingLeft="5dp"
+        android:textSize="9dp"/>
+</RelativeLayout>
